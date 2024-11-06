@@ -12,9 +12,9 @@ A API foi construída utilizando **Node.js**, com **Express** como framework e *
 - **MySQL**: Banco de dados relacional para armazenar informações sobre usuários e empresas.
 
 ### Estrutura de Pastas
-- **config/**: Arquivo de configuração do banco de dados.
 - **controllers/**: Lógica dos endpoints da API.
 - **database/**: Scripts para migrações e criação de tabelas no banco de dados.
+  - **config/**: Arquivo de configuração do banco de dados.
   - **migrations/**: Scripts de criação de tabelas (`createUsersTable.js`, `createCompanyTable.js` etc).
 - **middlewares/**: Middlewares para validação e autenticação.
 - **models/**: Definição da camada de acesso ao banco de dados.
