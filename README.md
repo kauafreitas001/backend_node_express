@@ -44,7 +44,7 @@ A API foi construída utilizando **Node.js**, com **Express** como framework e *
    - Configure as variáveis de ambiente ou edite o arquivo `config/db.js` com suas credenciais do banco de dados.
 
 ### Executar a Aplicação
-1. Inicie o servidor: **npm start**
+1. Inicie o servidor: ``npm start``
 
 2. A API estará disponível em: `http://localhost:3000`
 
