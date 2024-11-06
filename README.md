@@ -35,9 +35,9 @@ A API foi construída utilizando **Node.js**, com **Express** como framework e *
 - **MySQL**
 
 ### Instalação
-1. Clone o repositório: **git clone <url-do-repositorio>**
+1. Clone o repositório: ``git clone https://github.com/kauafreitas001/backend_node_express.git``
 
-2. Instale as dependências: **npm install**
+2. Instale as dependências: ``npm install``
 
 3. Configure o banco de dados:
    - Crie um banco de dados MySQL.
