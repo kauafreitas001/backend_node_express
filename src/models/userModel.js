@@ -22,9 +22,8 @@ const userModel = {
       });
     });
   },
-
-  // Obter um usuário específico por e-mail
-  getUserByEmail: ( email ) => {
+  
+  getUserByEmail: ( email ) => { // Obter um usuário específico por e-mail
     return new Promise(( resolve, reject ) => {
       const query = "SELECT * FROM users WHERE email = ?";
       db.query( query, [ email ], ( err, results ) => {
