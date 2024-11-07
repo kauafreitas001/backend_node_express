@@ -3,7 +3,7 @@ const userModel = require( "../models/userModel" );
 // Serviço para gerenciar a lógica de negócios relacionada aos usuários
 const userService = {
   
-  getAllUsers: async () => { // Obter todos os usuários
+  getAllUsers: async () => {
     try {
       const results = await userModel.getAllUsers();
       return results;
@@ -13,7 +13,7 @@ const userService = {
     }
   },
 
-  getUserById: async ( id ) => { // Obter um usuário específico por ID
+  getUserById: async ( id ) => {
     try {
       const results = await userModel.getUserById( id );
       return results;
@@ -23,7 +23,7 @@ const userService = {
     }
   },
 
-  createUser: async ( userData ) => { // Criar um novo usuário
+  createUser: async ( userData ) => {
     try {
       // Verificar se o e-mail já está em uso
       const existingUser = await userModel.getUserByEmail( userData.email );
@@ -40,7 +40,7 @@ const userService = {
     }
   },
 
-  updateUser: async ( id, userData ) => { // Atualizar um usuário por ID
+  updateUser: async ( id, userData ) => {
     try {
       const results = await userModel.updateUser( id, userData );
       return results;
@@ -50,7 +50,7 @@ const userService = {
     }
   },
   
-  deleteUser: async ( id ) => { // Excluir um usuário por ID
+  deleteUser: async ( id ) => {
     try {
       const results = await userModel.deleteUser( id );
       return results;
