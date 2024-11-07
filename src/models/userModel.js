@@ -3,7 +3,7 @@ const db = require( "../database/config/db" );
 // Model para gerenciar operações de banco de dados dos usuários
 const userModel = {
   
-  getAllUsers: () => { // Obter todos os usuários
+  getAllUsers: () => {
     return new Promise(( resolve, reject ) => {
       const query = "SELECT * FROM users";
       db.query( query, ( err, results ) => {
@@ -13,7 +13,7 @@ const userModel = {
     });
   },
 
-  getUserById: ( id ) => { // Obter um usuário específico por ID
+  getUserById: ( id ) => {
     return new Promise(( resolve, reject ) => {
       const query = "SELECT * FROM users WHERE id = ?";
       db.query( query, [ id ], ( err, results ) => {
@@ -23,7 +23,7 @@ const userModel = {
     });
   },
   
-  getUserByEmail: ( email ) => { // Obter um usuário específico por e-mail
+  getUserByEmail: ( email ) => {
     return new Promise(( resolve, reject ) => {
       const query = "SELECT * FROM users WHERE email = ?";
       db.query( query, [ email ], ( err, results ) => {
@@ -33,7 +33,7 @@ const userModel = {
     });
   },
 
-  createUser: ( userData ) => { // Criar um novo usuário
+  createUser: ( userData ) => {
     return new Promise(( resolve, reject ) => {
       const { name, email, phone, password, company_id, image, config } = userData;
       const query = "INSERT INTO users (name, email, phone, password, company_id, image, config) VALUES (?, ?, ?, ?, ?, ?, ?)";
@@ -44,7 +44,7 @@ const userModel = {
     });
   },
 
-  updateUser: ( id, userData ) => { // Atualizar um usuário por ID
+  updateUser: ( id, userData ) => {
     return new Promise(( resolve, reject ) => {
       const { name, email, phone, password, company_id, image, config } = userData;
       const query = "UPDATE users SET name = ?, email = ?, phone = ?, password = ?, company_id = ?, image = ?, config = ? WHERE id = ?";
@@ -55,7 +55,7 @@ const userModel = {
     });
   },
 
-  deleteUser: ( id ) => { // Excluir um usuário por ID
+  deleteUser: ( id ) => {
     return new Promise(( resolve, reject ) => {
       const query = "DELETE FROM users WHERE id = ?";
       db.query( query, [ id ], ( err, results ) => {
