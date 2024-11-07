@@ -3,7 +3,7 @@ const db = require( "../database/config/db" );
 // Model para gerenciar operações de banco de dados das empresas
 const companyModel = {
   
-  getAllCompanies: () => { // Obter todas as empresas
+  getAllCompanies: () => {
     return new Promise(( resolve, reject ) => {
       const query = "SELECT * FROM company";
       db.query( query, ( err, results ) => {
@@ -13,7 +13,7 @@ const companyModel = {
     });
   },
 
-  getCompanyById: ( id ) => { // Obter uma empresa específica por ID
+  getCompanyById: ( id ) => {
     return new Promise(( resolve, reject ) => {
       const query = "SELECT * FROM company WHERE id = ?";
       db.query( query, [ id ], ( err, results ) => {
@@ -23,7 +23,7 @@ const companyModel = {
     });
   },
 
-  createCompany: ( userData ) => { // Criar uma nova empresa
+  createCompany: ( userData ) => {
     return new Promise(( resolve, reject ) => {
       const { name, registration_number, email, phone, address, logo, config } = userData;
       const query = "INSERT INTO company (name, registration_number, email, phone, address, logo, config) VALUES (?, ?, ?, ?, ?, ?, ?)";
@@ -34,7 +34,7 @@ const companyModel = {
     });
   },
 
-  updateCompany: ( id, userData ) => { // Atualizar uma empresa por ID
+  updateCompany: ( id, userData ) => {
     return new Promise(( resolve, reject ) => {
       const { name, registration_number, email, phone, address, logo, config } = userData;
       const query = "UPDATE company SET name = ?, registration_number = ?, email = ?, phone = ?, address = ?, logo = ?, config = ? WHERE id = ?";
@@ -45,7 +45,7 @@ const companyModel = {
     });
   },
 
-  deleteCompany: ( id ) => { // Excluir uma empresa por ID
+  deleteCompany: ( id ) => {
     return new Promise(( resolve, reject ) => {
       const query = "DELETE FROM company WHERE id = ?";
       db.query( query, [ id ], ( err, results ) => {
