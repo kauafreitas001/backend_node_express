@@ -3,7 +3,7 @@ const companyModel = require( "../models/companyModel" );
 // Serviço para gerenciar a lógica de negócios relacionada as empresas
 const companyService = {
   
-  getAllCompanies: async () => { // Obter todas as empresas
+  getAllCompanies: async () => {
     try {
       const results = await companyModel.getAllCompanies();
       return results;
@@ -13,7 +13,7 @@ const companyService = {
     }
   },
 
-  getCompanyById: async ( id ) => { // Obter uma empresa específico por ID
+  getCompanyById: async ( id ) => {
     try {
       const results = await companyModel.getCompanyById( id );
       return results;
@@ -23,7 +23,7 @@ const companyService = {
     }
   },
 
-  createCompany: async ( userData ) => { // Criar uma nova empresa
+  createCompany: async ( userData ) => {
     try {
       const results = await companyModel.createCompany( userData );
       return results;
@@ -33,7 +33,7 @@ const companyService = {
     }
   },
 
-  updateCompany: async ( id, userData ) => { // Atualizar uma empresa por ID
+  updateCompany: async ( id, userData ) => {
     try {
       const results = await companyModel.updateCompany( id, userData );
       return results;
@@ -43,7 +43,7 @@ const companyService = {
     }
   },
   
-  deleteCompany: async ( id ) => { // Excluir uma empresa por ID
+  deleteCompany: async ( id ) => {
     try {
       const results = await companyModel.deleteCompany( id );
       return results;
