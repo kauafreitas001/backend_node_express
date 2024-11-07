@@ -1,6 +1,6 @@
 const connection = require( "../config/db" );
 
-const companyCreateTable = () => { // Função para criar a tabela company e inserir registro padrão
+const companyCreateTable = () => {
   const companyCreateTableQuery = `
     CREATE TABLE IF NOT EXISTS company (
       id INT AUTO_INCREMENT PRIMARY KEY,
@@ -23,7 +23,6 @@ const companyCreateTable = () => { // Função para criar a tabela company e ins
     }
     console.log( "Tabela company verificada/criada com sucesso!" );
 
-    // Verificar se existe algum registro na tabela company
     const checkCompanyQuery = `SELECT COUNT(*) AS count FROM company`;
     connection.query( checkCompanyQuery, ( err, results ) => {
       if ( err ) {
@@ -33,7 +32,6 @@ const companyCreateTable = () => { // Função para criar a tabela company e ins
 
       const companyCount = results[ 0 ].count;
       if ( companyCount === 0 ) {
-        // Inserir um registro padrão se não houver nenhuma empresa
         const insertDefaultCompanyQuery = `
           INSERT INTO company (name, registration_number, email, phone, address, logo, config)
           VALUES ('Company Admin', '11.111.111/0001-00', 'admin@example.com', '(99) 99999-9999', null, null, '{}');
