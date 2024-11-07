@@ -43,6 +43,8 @@ A API foi construída utilizando **Node.js**, com **Express** como framework e *
    - Crie um banco de dados MySQL.
    - Configure as variáveis de ambiente ou edite o arquivo `config/db.js` com suas credenciais do banco de dados.
 
+4. Execute as migrations para criar as tabelas e registros: ``node src/database/migrations/migrate.js``
+
 ### Executar a Aplicação
 1. Inicie o servidor: ``npm start``
 
