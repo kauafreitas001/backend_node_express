@@ -1,6 +1,6 @@
 const connection = require( "../config/db" );
 
-const userCreateTable = () => { // Função para criar a tabela users e inserir registro padrão
+const userCreateTable = () => {
   const userCreateTableQuery = `
     CREATE TABLE IF NOT EXISTS users (
       id INT AUTO_INCREMENT PRIMARY KEY,
@@ -24,7 +24,6 @@ const userCreateTable = () => { // Função para criar a tabela users e inserir 
     }
     console.log( "Tabela users verificada/criada com sucesso!" );
 
-    // Verificar se existe algum registro na tabela users
     const checkUsersQuery = `SELECT COUNT(*) AS count FROM users`;
     connection.query( checkUsersQuery, ( err, results ) => {
       if ( err ) {
@@ -34,7 +33,6 @@ const userCreateTable = () => { // Função para criar a tabela users e inserir 
 
       const userCount = results[ 0 ].count;
       if ( userCount === 0 ) {
-        // Inserir um registro padrão se não houver nenhum usuário
         const insertDefaultUserQuery = `
           INSERT INTO users (name, email, phone, password, company_id, image, config)
           VALUES ('Admin', 'admin@example.com', '(99) 99999-9999', 'admin123', 1, null, '{}');
