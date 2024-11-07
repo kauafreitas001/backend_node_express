@@ -2,7 +2,7 @@ const userService = require( "../services/userService" );
 
 const userController = {
   
-  getAllUsers: async ( req, res ) => { // Obter todos os usuários
+  getAllUsers: async ( req, res ) => {
     try {
       const results = await userService.getAllUsers();
       res.status( 200 ).json( results );
@@ -12,7 +12,7 @@ const userController = {
     }
   },
 
-  getUserById: async ( req, res ) => { // Obter um usuário específico por ID
+  getUserById: async ( req, res ) => {
     const userId = req.params.id;
     try {
       const results = await userService.getUserById( userId );
@@ -26,7 +26,7 @@ const userController = {
     }
   },
 
-  createUser: async ( req, res ) => { // Criar um novo usuário
+  createUser: async ( req, res ) => {
     const { name, email, phone, password, company_id, image, config } = req.body;
     try {
       const results = await userService.createUser({ name, email, phone, password, company_id, image, config });
@@ -37,7 +37,7 @@ const userController = {
     }
   },
 
-  updateUser: async ( req, res ) => { // Atualizar um usuário por ID
+  updateUser: async ( req, res ) => {
     const userId = req.params.id;
     const { name, email, phone, password, company_id, image, config } = req.body;
     try {
@@ -52,7 +52,7 @@ const userController = {
     }
   },
 
-  deleteUser: async ( req, res ) => { // Excluir um usuário por ID
+  deleteUser: async ( req, res ) => {
     const userId = req.params.id;
     try {
       const results = await userService.deleteUser( userId );
