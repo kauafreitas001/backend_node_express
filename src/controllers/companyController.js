@@ -2,7 +2,7 @@ const companyService = require( "../services/companyService" );
 
 const companyController = {
   
-  getAllCompanies: async ( req, res ) => { // Obter todas as empresas
+  getAllCompanies: async ( req, res ) => {
     try {
       const results = await companyService.getAllCompanies();
       res.status( 200 ).json( results );
@@ -12,7 +12,7 @@ const companyController = {
     }
   },
 
-  getCompanyById: async ( req, res ) => { // Obter uma empresa específica por ID
+  getCompanyById: async ( req, res ) => {
     const companyId = req.params.id;
     try {
       const results = await companyService.getCompanyById( companyId );
@@ -26,7 +26,7 @@ const companyController = {
     }
   },
 
-  createCompany: async ( req, res ) => { // Criar uma nova empresa
+  createCompany: async ( req, res ) => {
     const { name, registration_number, email, phone, address, logo, config } = req.body;
     try {
       const results = await companyService.createCompany({ name, registration_number, email, phone, address, logo, config });
@@ -37,7 +37,7 @@ const companyController = {
     }
   },
 
-  updateCompany: async ( req, res ) => { // Atualizar uma empresa por ID
+  updateCompany: async ( req, res ) => {
     const companyId = req.params.id;
     const { name, registration_number, email, phone, address, logo, config } = req.body;
     try {
@@ -52,7 +52,7 @@ const companyController = {
     }
   },
 
-  deleteCompany: async ( req, res ) => { // Excluir uma empresa por ID
+  deleteCompany: async ( req, res ) => {
     const companyId = req.params.id;
     try {
       const results = await companyService.deleteCompany( companyId );
